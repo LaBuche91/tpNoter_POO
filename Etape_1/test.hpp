@@ -69,7 +69,7 @@ void test_complex_expressions() {
             )
         )
     );
-    assert(expr2->evaluate() == 156); // (2 * 3 + 4) * (2 + 3 * 4) = 10 * 14 = 156
+    assert(expr2->evaluate() == 140); // (2 * 3 + 4) * (2 + 3 * 4) = 10 * 14 = 156
 }
 
 void test_edge_cases() {
@@ -90,17 +90,4 @@ void test_edge_cases() {
         std::make_unique<Constante>(0)
     );
     assert(identity_add->evaluate() == 1);
-}
-
-int main() {
-    try {
-        test_simple_operations();
-        test_complex_expressions();
-        test_edge_cases();
-        std::cout << "All additional tests passed successfully!" << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Test failed: " << e.what() << std::endl;
-        return 1;
-    }
-    return 0;
 }
